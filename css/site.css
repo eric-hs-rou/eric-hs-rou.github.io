@@ -180,3 +180,188 @@ details.trend summary::before { content: "▸ "; }
 details.trend[open] summary::before { content: "▾ "; }
 details.trend summary:hover { background: var(--tab-bg); }
 hr.divider { border: 0; height: 2px; margin: 2.6rem 0 0; background: var(--tab-bg); }   /* light divider in the tab colour (Experience) */
+
+/* ---- PLAIN STYLE (trial, Eric 2026-11-13): same content, functions and tab colours, a plainer hand-made look in the
+   manner of typical academic pages (UCLA Wireless Lab, Ian Roberts, KAIST ICL, UNIST Han Lab). Remove this block to revert;
+   the previous file is archive/pre_plain_20261113/src/static/css/site.css. ---- */
+:root { --font: Arial, Helvetica, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; --line: #cccccc; --muted: #666666; }
+body { font: 15px/1.55 var(--font); border-top-width: 3px; }
+.wrap { width: min(100% - 2rem, 58rem); }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+h1 { font-size: 1.75rem; font-weight: 700; margin: 1.2rem 0 .5rem; }
+h2 { font-size: 1.2rem; font-weight: 700; margin: 2rem 0 .7rem; padding-bottom: .2rem; border-bottom: 1px solid var(--line); }
+body:not(.t-home) h1 { border-left: 0; padding-left: 0; padding-bottom: .3rem; border-bottom: 2px solid var(--tab); }
+.h-note { font-size: .85rem; }
+/* menu: plain words; the tab colour marks the current page only */
+.bar { padding: .8rem 0; }
+.brand { font-size: 1.05rem; }
+nav ul { gap: .2rem 1.3rem; }
+nav a { border-bottom: 0; font-size: .95rem; }
+nav a:hover { border-bottom: 0; text-decoration: underline; }
+nav a[aria-current] { font-weight: 700; border-bottom: 2px solid var(--tab); }
+/* home header */
+.hero { grid-template-columns: 10rem 1fr; gap: 1.6rem; }
+.portrait { border-radius: 0; border: 0; }
+.hero h1 { color: var(--fg); font-size: 1.75rem; }
+.role { color: var(--fg); font-size: 1.05rem; }
+.org { color: var(--fg); font-size: .95rem; }
+.hero .office { font-size: .88rem; }
+/* research interests: a plain list separated by middle dots */
+.tags { display: block; margin: .6rem 0; font-size: .92rem; }
+.tags li { display: inline; }
+.tags li + li::before { content: " · "; color: var(--muted); }
+.tags span, .tags a { display: inline; border: 0; border-radius: 0; padding: 0; background: none; font-size: inherit; }
+/* profile links: text instead of round icons, separated by | */
+.links { display: block; margin: .5rem 0; font-size: .92rem; }
+.links li { display: inline; }
+.links li + li::before { content: " | "; color: var(--muted); }
+.links a { display: inline; width: auto; height: auto; border: 0; border-radius: 0; color: var(--accent); }
+.links a svg { display: none; }
+.links a::after { content: attr(title); }
+/* numbers: one ruled table row instead of cards */
+.tiles { gap: 0; border: 1px solid var(--line); grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)); }
+.tile, .tile.b { background: none; border: 0; border-right: 1px solid var(--line); border-radius: 0; padding: .5rem .7rem; }
+.tile:last-child { border-right: 0; }
+.tile .num, .tile.b .num, .facts .tile .num { font-size: 1.35rem; color: var(--fg); }
+.tile .lbl, .tile .lbl.lblw { font-weight: 400; font-size: .85rem; }
+.tile .fc { border: 0; padding: 0; background: none; border-radius: 0; color: var(--muted); font-size: .78rem; }
+a.tile:hover { border-color: var(--line); text-decoration: none; background: #f6f6f6; }
+details.trend summary { border: 0; border-radius: 0; padding: 0; font-size: .9rem; }
+details.trend summary:hover { background: none; text-decoration: underline; }
+/* news and talk tags: coloured words, no bubbles */
+.news li { grid-template-columns: 5.2rem 1fr; border-bottom: 0; padding: .25rem 0; }
+.ntag { border: 0; border-radius: 0; padding: 0; background: none; font-size: .78rem; color: var(--tab-ink, var(--muted)); }
+.ntag::before { display: none; }
+.ntag.soft { color: var(--muted); }
+/* filters and buttons: square, small */
+.chip, .button, select, input[type="search"] { border-radius: 2px; }
+.chip { padding: .1rem .6rem; }
+/* publications: plain entries, status in brackets instead of pills */
+.pub { padding: .55rem 0; border-bottom: 0; }
+.pub .t { font-size: .95rem; }
+.pub .v { font-size: .93rem; font-weight: 400; }
+.pub .a { font-size: .9rem; }
+.badge { border: 0; border-radius: 0; padding: 0; font-size: .85rem; color: var(--muted); }
+.badge::before { content: "["; } .badge::after { content: "]"; }
+.pub:target { outline: 0; background: #fff8d6; }
+.item { border-bottom: 0; padding: .45rem 0; }
+hr.divider { height: 1px; background: var(--line); }
+.card { border-radius: 0; background: none; }
+footer { font-size: .82rem; }
+@media (max-width: 640px) { .hero { grid-template-columns: 1fr; gap: 1rem; } .portrait { max-width: 8rem; } .tile { border-bottom: 1px solid var(--line); } }
+/* ---- PLAIN STYLE, round 2 (Eric: a bit too bland and table-like; add some colour bands, keep the plain feel) ---- */
+/* header: a pale band in the page's tab colour */
+header.top { background: var(--tab-bg); border-bottom: 1px solid var(--tab); }
+nav a[aria-current] { border-bottom-width: 3px; }
+/* section headings: a tinted band instead of a rule */
+h2 { background: var(--tab-bg); border-bottom: 0; padding: .35rem .7rem; margin: 2rem 0 .8rem; }
+h2 .h-note { color: var(--fg-2); }
+body:not(.t-home) h1 { border-bottom: 0; }
+/* the numbers: separate square boxes on a light tint, not a table */
+.tiles { border: 0; gap: .5rem; }
+.tile, .tile.b { background: #f4f6f8; border: 0; border-right: 0; }
+.tile:first-child, .tile:nth-child(2), .tile:nth-child(3) { background: var(--tab-bg); }
+.tile .num, .tile.b .num, .facts .tile .num { color: var(--accent-strong); }
+a.tile:hover { background: #e9edf1; }
+@media (max-width: 640px) { .tile { border-bottom: 0; } }
+/* footer: a light grey band */
+footer { background: #f4f6f8; border-top: 0; margin-top: 3rem; }
+body.t-publications header.top, body.t-publications h2, body.t-publications .tile:nth-child(-n+3) { background: #e3f5f8; } body.t-publications header.top { border-bottom-color: #14a3b8; }
+.fig-num { font-size: 13px; fill: var(--fg); font-weight: 400; }   /* bar values, all years except the latest (Eric, 2026-11-13) */
+/* ---- One colour scheme on every page (Eric, 2026-11-13): turquoise throughout; each tab's own colour only on its
+   menu underline (the menu items carry their own t-<tab> class). News/talk tags keep their tab colours. ---- */
+body[class] { --accent: #0a7491; --accent-strong: #075f78; --band: #e3f5f8; border-top-color: #14a3b8; }
+header.top { background: var(--band); border-bottom-color: #14a3b8; }
+h2 { background: var(--band); }
+.tile:nth-child(-n+3) { background: var(--band); }
+a { color: var(--accent); }
+/* ---- Thin black section lines (Eric, 2026-11-13): a 1px black line above every section heading, under each page
+   title, above the footer, and the Experience divider in black. ---- */
+h2 { position: relative; margin-top: 2.8rem; }
+h2::before { content: ""; position: absolute; left: 0; right: 0; top: -1.4rem; border-top: 1px solid #000; }
+body:not(.t-home) h1 { border-bottom: 1px solid #000; padding-bottom: .4rem; margin-bottom: 1rem; }
+hr.divider { height: 0; background: none; border-top: 1px solid #000; }
+hr.divider + section h2::before { display: none; }
+footer { border-top: 1px solid #000; }
+h1 + section > h2:first-child::before, h1 + h2::before { display: none; }
+/* section lines: thicker and lighter (Eric, 2026-11-13) */
+:root { --rule: 2px solid #9a9a9a; }
+h2::before { border-top: var(--rule); }
+body:not(.t-home) h1 { border-bottom: var(--rule); }
+hr.divider { border-top: var(--rule); }
+footer { border-top: var(--rule); }
+/* home title spacing (Eric, 2026-11-13): a little space after the role, school and address close together,
+   a little space before the e-mails and before 'Research Interests:' (bold, own line) */
+.hero .role { margin-bottom: .55rem !important; }
+.hero .org { margin: 0 !important; }
+.hero .office { margin-top: .05rem !important; }
+.hero .emails { margin-top: .7rem !important; }
+.hero .ri-label { margin: .7rem 0 .1rem !important; font-size: .92rem; }
+.hero .tags { margin-top: 0; }
+.hero { grid-template-columns: 10.5rem 1fr; }   /* photo ends level with the research-interests line (Eric, 2026-11-13) */
+@media (max-width: 640px) { .hero { grid-template-columns: 1fr; } }
+.hero { margin-top: 2rem; }   /* a little more space above the name and photo (Eric, 2026-11-13) */
+/* turquoise bands a little darker (Eric, 2026-11-13) */
+body[class] { --band: #cfeaf0; }
+body.t-publications header.top, body.t-publications h2, body.t-publications .tile:nth-child(-n+3) { background: var(--band); }
+body[class] { --band: #c3edf0; }   /* more saturated turquoise (Eric, 2026-11-13) */
+body[class] { --band: #bbdfe2; }   /* a little darker, less vivid (Eric, 2026-11-13) */
+/* e-mails and profile links on one line after the keywords (Eric, 2026-11-13) */
+.hero .contact { margin-top: .7rem; font-size: .92rem; }
+.hero .contact .emails, .hero .contact .links { display: inline; margin: 0 !important; font-size: inherit; }
+.hero .contact .emails .sep { margin: 0; }
+.hero .contact .links::before { content: " | "; color: var(--muted); }
+.hero .ri-label { margin-top: .75rem !important; }
+/* profile links as small logos again, inline after the e-mails, no circles (Eric, 2026-11-13) */
+.hero .contact .links li + li::before { content: none; }
+.hero .contact .links li { margin-left: .5rem; }
+.hero .contact .links a::after { content: none; }
+.hero .contact .links a svg { display: inline-block; width: 1.15rem; height: 1.15rem; vertical-align: -.22rem; fill: #3d4651; }
+.hero .contact .links a:hover svg { fill: var(--accent); }
+.hero .contact .links::before { content: " |"; }
+body[class] header.top { background: none; border-bottom: 1px solid var(--line); }   /* header band removed, as in the first plain version (Eric, 2026-11-14) */
+nav a, nav a:hover { border-bottom: 2px solid var(--tab); } nav a[aria-current] { border-bottom: 3px solid var(--tab); }   /* every tab keeps its colour underline; 3px when selected (Eric, 2026-11-14) */
+body[class] { --band: #c4e8ed; }   /* 25% tint of the tab turquoise #14a3b8: same hue, fainter (Eric, 2026-11-14) */
+body[class] { --band: #b8e3ea; }   /* 30% tint of #14a3b8 (Eric, 2026-11-14: a bit more) */
+/* ---- No bands (Eric, 2026-11-14): section headings without background, in dark turquoise; faint turquoise
+   section lines; bold headline text (entry titles, role, 'Research Interests:') in dark turquoise. ---- */
+:root { --rule: 2px solid #95d6df; --ink: #075f78; }
+h2, body.t-publications h2 { background: none; padding: 0 0 .1rem; color: var(--ink); }
+h2 .h-note, h2 .muted { color: var(--muted); }
+h2::before { top: -1.2rem; }
+.pub .t, .item .t, .hero .role, .hero .ri-label, .lecture .t, section h3 { color: var(--ink); }
+.pub .t .num { color: var(--fg); }
+/* news and talk type tags in bold, same colours, slightly smaller (Eric, 2026-11-14) */
+.ntag { font-weight: 700; font-size: .72rem; }
+/* page titles: an underline in the tab's colour under the words; the faint turquoise line stays (Eric, 2026-11-14) */
+body:not(.t-home) h1 { text-decoration: underline 3px var(--tab); text-underline-offset: .42em; text-decoration-skip-ink: none; padding-bottom: .55rem; }
+/* charts (Eric, 2026-11-14): latest-total label larger; 'Total' and 'per year' underlined in the captions */
+.charts figure:first-child .fig-val { font-size: 16px; }
+figcaption u { text-underline-offset: 3px; }
+/* Publications: one thin metrics line under the title (Eric, 2026-11-14) */
+.metrics { font-size: .88rem; color: var(--fg-2); margin: -.2rem 0 0; padding: .45rem 0; border-bottom: var(--rule); line-height: 1.6; }
+.metrics b { color: var(--ink); font-size: 1rem; }
+.metrics .sep { color: var(--muted); margin: 0 .25rem; }
+.metrics .muted { font-size: .8rem; }
+.metrics { border-bottom: 0; padding-bottom: 0; }
+/* Publications: six small metric blocks under the title (Eric, 2026-11-14) */
+.mblocks { display: grid; grid-template-columns: repeat(6, 1fr); gap: .4rem; margin: .2rem 0 .2rem; }
+.mblocks div { background: var(--band); padding: .35rem .55rem; display: flex; flex-direction: column; line-height: 1.25; }
+.mblocks b { color: var(--ink); font-size: 1.15rem; }
+.mblocks span { font-size: .8rem; }
+.mblocks small { font-size: .7rem; color: var(--muted); margin-top: .1rem; }
+.mnote { font-size: .75rem; color: var(--muted); margin: 0; }
+@media (max-width: 640px) { .mblocks { grid-template-columns: repeat(3, 1fr); } }
+.mblocks small { margin-top: 0; white-space: nowrap; } .mblocks small:first-of-type { margin-top: .1rem; }
+.mblocks small.rev { font-size: .78rem; color: var(--ink); font-weight: 600; } .mblocks small.fc { font-size: .74rem; color: var(--fg-2); font-weight: 700; }   /* Eric, 2026-11-14 */
+.mblocks div { display: block; } .mblocks b { margin-right: .3rem; } .mblocks small { display: block; }   /* number and label on one line (Eric, 2026-11-14) */
+.mblocks span { font-size: .86rem; }   /* labels very slightly larger (Eric, 2026-11-14) */
+.mblocks { gap: .35rem; } .mblocks div { padding: .35rem .45rem; } @media (min-width: 641px) { .mblocks span { white-space: nowrap; } }
+.mblocks small.rev { font-size: .84rem; }   /* Eric, 2026-11-14 */
+/* Publications: tighter lines and sections so more entries fit on a screen (Eric, 2026-11-14) */
+body.t-publications .pub { padding: .3rem 0; line-height: 1.35; }
+body.t-publications .pub p { margin: .05rem 0; }
+body.t-publications h2 { margin: 1.7rem 0 .35rem; }
+body.t-publications h2::before { top: -.85rem; }
+.pub .t .num { font-weight: 700; }   /* [J28] labels bold (Eric, 2026-11-14) */
