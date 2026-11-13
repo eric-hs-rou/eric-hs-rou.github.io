@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.erichsrou.com/sitemap.xml

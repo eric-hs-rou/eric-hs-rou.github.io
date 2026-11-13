@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-labelledby="t d" class="figure-svg">
+<title id="t">OFDM tones and AFDM chirps in the time-frequency plane</title>
+<desc id="d">Left: OFDM subcarriers are horizontal lines at fixed frequencies. Right: AFDM subcarriers are chirps whose frequency increases linearly with time and wraps around the band.</desc>
+<g transform="translate(40,40)">
+<rect width="260.0" height="220.0" fill="none" stroke="var(--muted)" stroke-width="1"/>
+<text x="130.0" y="-12" text-anchor="middle" class="fig-title">OFDM: sinusoidal subcarriers</text>
+<text x="130.0" y="242.0" text-anchor="middle" class="fig-label">time</text>
+<text x="-12" y="110.0" text-anchor="middle" class="fig-label" transform="rotate(-90 -12 110.0)">frequency</text>
+<line x1="0" y1="199.4" x2="260.0" y2="199.4" stroke="var(--c1)" stroke-width="3"/>
+<line x1="0" y1="144.4" x2="260.0" y2="144.4" stroke="var(--c2)" stroke-width="3"/>
+<line x1="0" y1="89.4" x2="260.0" y2="89.4" stroke="var(--c3)" stroke-width="3"/>
+<line x1="0" y1="34.4" x2="260.0" y2="34.4" stroke="var(--c4)" stroke-width="3"/>
+</g>
+<g transform="translate(340.0,40)">
+<rect width="260.0" height="220.0" fill="none" stroke="var(--muted)" stroke-width="1"/>
+<text x="130.0" y="-12" text-anchor="middle" class="fig-title">AFDM: chirp subcarriers</text>
+<text x="130.0" y="242.0" text-anchor="middle" class="fig-label">time</text>
+<text x="-12" y="110.0" text-anchor="middle" class="fig-label" transform="rotate(-90 -12 110.0)">frequency</text>
+<line x1="0.0" y1="206.2" x2="243.8" y2="0.0" stroke="var(--c1)" stroke-width="3" stroke-linecap="round"/><line x1="243.8" y1="220.0" x2="260.0" y2="206.2" stroke="var(--c1)" stroke-width="3" stroke-linecap="round"/>
+<line x1="0.0" y1="151.2" x2="178.8" y2="0.0" stroke="var(--c2)" stroke-width="3" stroke-linecap="round"/><line x1="178.8" y1="220.0" x2="260.0" y2="151.2" stroke="var(--c2)" stroke-width="3" stroke-linecap="round"/>
+<line x1="0.0" y1="96.2" x2="113.8" y2="0.0" stroke="var(--c3)" stroke-width="3" stroke-linecap="round"/><line x1="113.8" y1="220.0" x2="260.0" y2="96.2" stroke="var(--c3)" stroke-width="3" stroke-linecap="round"/>
+<line x1="0.0" y1="41.2" x2="48.8" y2="0.0" stroke="var(--c4)" stroke-width="3" stroke-linecap="round"/><line x1="48.8" y1="220.0" x2="260.0" y2="41.2" stroke="var(--c4)" stroke-width="3" stroke-linecap="round"/>
+</g>
+</svg>
