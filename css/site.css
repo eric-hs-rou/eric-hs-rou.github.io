@@ -369,3 +369,36 @@ body.t-publications h2::before { top: -.85rem; }
 .hero .contact .links a svg { width: 1.35rem; height: 1.35rem; vertical-align: -.3rem; }
 .hero { grid-template-columns: 9.5rem 1fr; }
 @media (max-width: 640px) { .hero { grid-template-columns: 1fr; } }
+
+/* ---- PHONE (Eric, 2026-11-19: desktop unchanged; phones get a tighter layout) ---- */
+.cv-open { display: none; }
+@media (max-width: 640px) {
+  /* menu on one row (scrolls sideways on very narrow screens instead of wrapping) */
+  .bar { padding: .6rem 0 .2rem; gap: .3rem; }
+  nav { width: 100%; }
+  nav ul { flex-wrap: nowrap; justify-content: space-between; overflow-x: auto; gap: 0 .5rem; padding-bottom: .35rem; scrollbar-width: none; }
+  nav ul::-webkit-scrollbar { display: none; }
+  nav a { font-size: .86rem; white-space: nowrap; }
+  /* home: small photo beside the name, research interests full width below */
+  .hero { display: block; margin-top: 1.2rem; }
+  .hero .portrait { float: left; width: 6.25rem; max-width: none; margin: .2rem 1rem .5rem 0; }
+  .hero h1 { font-size: 1.45rem; line-height: 1.2; }
+  .hero h1 .ko { white-space: nowrap; }
+  .hero .role { font-size: 1rem; }
+  .hero .org, .hero .office { font-size: .86rem; }
+  .hero .ri-label { clear: both; padding-top: .3rem; }
+  .hero .contact { clear: both; }
+  /* at a glance: three compact boxes per row */
+  .tiles { grid-template-columns: repeat(3, 1fr); gap: .35rem; }
+  .tile, .tile.b { padding: .45rem .5rem; }
+  .tile .num, .tile.b .num, .facts .tile .num { font-size: 1.2rem; }
+  .tile .lbl, .tile .lbl.lblw { white-space: normal; font-size: .78rem; line-height: 1.25; }
+  .tile .cap, .tile .fc { font-size: .7rem; }
+  /* news: date and tag on one line, text full width */
+  .news li { grid-template-columns: 1fr; gap: .1rem; padding: .45rem 0; }
+  .news .when { flex-direction: row; align-items: baseline; gap: .5rem; }
+  /* CV: phones cannot show an inline PDF well; offer the file instead */
+  .cvpdf { display: none; }
+  .cv-open { display: block; margin-top: 1rem; }
+  .cv-open a { display: inline-block; padding: .55rem 1rem; border: 1px solid var(--accent); border-radius: 4px; font-weight: 600; text-decoration: none; }
+}
